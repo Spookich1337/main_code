@@ -1,47 +1,28 @@
-#include<iostream>
-#include<vector>
-#include<string>
+#include "includes/lib.h"
 
-void printMatrix(const std::vector<std::vector<int>>& matrix) {
-    for (const auto& row : matrix) {
-        for (int val : row) {
-            std::cout << val << " ";
-        }
-        std::cout << std::endl;
-    }
-}
+int main() {
+    std::cout << "Input strings\n";
 
-int main(){
     std::string str_1, str_2;
-    int rep, ins, del;
-
-    std::cin >> rep >> ins >> del;
     std::cin >> str_1 >> str_2;
 
-    int n = str_2.size(), m = str_1.size();
+    std::string input;
+    std::vector<int> flags(2, 0);
 
-    std::vector<std::vector<int>> matrix(n + 1, std::vector<int>(m + 1));
-
-    matrix[0][0] = 0;
-    
-    for (int i = 1; i < m + 1; i++) {
-        matrix[0][i] = i * ins;
+    std::cout << "Wanna see how program works?(y/n)\n";
+    std::cin >> input;
+    if (input == "y"){
+        flags[0] = 1;
     }
 
-    for (int i = 1; i < n + 1; i++) {
-        matrix[i][0] = i * del;
+    input = "";
+    std::cout << "Wanna use your own costs of operation?(y/n)\n";
+    std::cin >> input;
+    if (input == "y"){
+        flags[1] = 1;
     }
 
-    for (int i = 1; i < m + 1; i++){
-        for (int j = 1; j < n + 1; j ++){
-            if (str_1[i - 1] == str_2[j - 1]) {
-                matrix[i][j] = matrix[i-1][j-1];
-            } else {
-                matrix[i][j] = std::min(matrix[i-1][j-1], std::min(matrix[i][j-1], matrix[i-1][j])) + 1;
-            }
-        }
-    }
-    
-    printMatrix(matrix);
+    Levenshtain(str_1, str_2, flags);
+
     return 0;
 }

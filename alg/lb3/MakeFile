@@ -1,0 +1,11 @@
+all: Lev
+
+lib.o: includes/lib.cpp
+	g++ -c -o lib.o includes/lib.cpp
+	
+Lev: main.cpp lib.o
+	g++ -o Lev main.cpp includes/lib.h lib.o
+	rm -f *.o
+
+clear:
+	rm Lev
