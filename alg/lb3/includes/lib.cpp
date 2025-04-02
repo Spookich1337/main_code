@@ -4,6 +4,8 @@ std::string get_moves(const std::vector<std::vector<Cell>>& matrix, int n, int m
     std::string sequence;
     int i = m, j = n;
     while (i > 0 || j > 0) {
+        std::cout << "Index i: " << i << " j: " << j << '\n';
+        std::cout << "Move: " << matrix[i][j].move << '\n';
         switch (matrix[i][j].move) {
             case 'M':
                 sequence += 'M';
@@ -27,6 +29,48 @@ std::string get_moves(const std::vector<std::vector<Cell>>& matrix, int n, int m
     return sequence;
 }
 
+std::set<std::string> get_all_moves(const std::vector<std::vector<Cell>>& matrix, int i, int j) {
+    std::set<std::string> result;
+    
+    if (i == 0 && j == 0) {
+        result.insert("");
+        return result;
+    }
+    
+    std::vector<std::pair<int, int>> moves;
+    int min_cost = matrix[i][j].cost;
+    
+    // Проверяем все возможные ходы
+    if (i > 0 && j > 0 && matrix[i-1][j-1].cost + (matrix[i][j].move == 'R' ? 1 : 0) == min_cost) {
+        moves.emplace_back(i-1, j-1);
+    }
+    if (j > 0 && matrix[i][j-1].cost + 1 == min_cost) {
+        moves.emplace_back(i, j-1);
+    }
+    if (i > 0 && matrix[i-1][j].cost + 1 == min_cost) {
+        moves.emplace_back(i-1, j);
+    }
+    
+    // Рекурсивно собираем все последовательности
+    for (const auto& move_pair : moves) {
+        char move = ' ';
+        if (move_pair.first == i-1 && move_pair.second == j-1) {
+            move = (matrix[i][j].move == 'M' ? 'M' : 'R');
+        } else if (move_pair.first == i && move_pair.second == j-1) {
+            move = 'I';
+        } else if (move_pair.first == i-1 && move_pair.second == j) {
+            move = 'D';
+        }
+        
+        auto sub_moves = get_all_moves(matrix, move_pair.first, move_pair.second);
+        for (const auto& sub_move : sub_moves) {
+            result.insert(sub_move + move);
+        }
+    }
+    
+    return result;
+}
+
 void printMatrix(const std::vector<std::vector<Cell>>& matrix){
     for (const auto& row : matrix) {
         for (Cell val : row) {
@@ -34,6 +78,43 @@ void printMatrix(const std::vector<std::vector<Cell>>& matrix){
         }
         std::cout << std::endl;
     }
+}
+
+void demonstrate_transformation(const std::string& str1, const std::string& str2, const std::string& sequence) {
+    std::string current = str1;
+    int pos1 = 0, pos2 = 0;
+    
+    std::cout << "Start:  " << current << "\n";
+    
+    for (size_t i = 0; i < sequence.size(); ++i) {
+        char move = sequence[i];
+        std::string step = current;
+        
+        switch (move) {
+            case 'M':
+                step[pos1] = step[pos1] ;
+                pos1++;
+                pos2++;
+                break;
+            case 'R':
+                step[pos1] = str2[pos2];
+                pos1++;
+                pos2++;
+                break;
+            case 'I':
+                step.insert(pos1, 1, str2[pos2]);
+                pos2++;
+                break;
+            case 'D':
+                step.erase(pos1, 1);
+                break;
+        }
+        
+        std::cout << "Step " << i+1 << " (" << move << "): " << step << "\n";
+        current = step;
+    }
+    
+    std::cout << "Result: " << current << "\n";
 }
 
 std::vector<std::vector<Cell>> Levenshtain(std::string str_1, std::string str_2, std::vector<int> flags){
@@ -101,6 +182,19 @@ std::vector<std::vector<Cell>> Levenshtain(std::string str_1, std::string str_2,
         std::cout << "All moves: ";
         // Вывод последоввательности действий
         std::cout << get_moves(dp, n, m) << '\n';
+    }
+
+    // Вывод всех последовательностей
+    auto all_sequences = get_all_moves(dp, m, n);
+    std::cout << "\nAll optimal sequences (" << all_sequences.size() << "):\n";
+    for (const auto& seq : all_sequences) {
+        std::cout << seq << "\n";
+    }
+
+    // Демонстрация преобразования
+    if (!all_sequences.empty()) {
+        std::cout << "\nDemonstrating transformation for sequence: " << *all_sequences.begin() << "\n";
+        demonstrate_transformation(str_1, str_2, *all_sequences.begin());
     }
 
     return dp;

@@ -22,7 +22,7 @@ int main() {
         flags[1] = 1;
     }
 
-    Levenshtain(str_1, str_2, flags);
+    std::vector<std::vector<Cell>> matrix = Levenshtain(str_1, str_2, flags);
 
     return 0;
 }

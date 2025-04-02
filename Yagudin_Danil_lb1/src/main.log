@@ -1,0 +1,730 @@
+Script started on 2025-02-28 22:42:12+03:00
+spookich@spookich-1337: ~/os date && who
+28 2025 22:42:36 MSK
+spookich :0           2025-02-28 21:13 (:0)
+
+spookich@spookich-1337: ~/os date && lscpu
+ 28  2025 22:42:57 MSK
+Architecture:             x86_64
+  CPU op-mode(s):         32-bit, 64-bit
+  Address sizes:          39 bits physical, 48 bits virtual
+  Byte Order:             Little Endian
+CPU(s):                   4
+  On-line CPU(s) list:    0-3
+Vendor ID:                GenuineIntel
+  Model name:             Intel(R) Core(TM) i3-10110U CPU @ 2.10GHz
+    CPU family:           6
+    Model:                142
+    Thread(s) per core:   2
+    Core(s) per socket:   2
+    Socket(s):            1
+    Stepping:             12
+    CPU max MHz:          4100,0000
+    CPU min MHz:          400,0000
+    BogoMIPS:             5199.98
+    Flags:                fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge m
+                          ca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 s
+                          s ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc 
+                          art arch_perfmon pebs bts rep_good nopl xtopology nons
+                          top_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor 
+                          ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid 
+                          sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer a
+                          es xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpu
+                          id_fault epb ssbd ibrs ibpb stibp ibrs_enhanced tpr_sh
+                          adow flexpriority ept vpid ept_ad fsgsbase tsc_adjust 
+                          sgx bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx sm
+                          ap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves 
+                          dtherm ida arat pln pts hwp hwp_notify hwp_act_window 
+                          hwp_epp vnmi md_clear flush_l1d arch_capabilities
+Virtualization features:  
+  Virtualization:         VT-x
+Caches (sum of all):      
+  L1d:                    64 KiB (2 instances)
+  L1i:                    64 KiB (2 instances)
+  L2:                     512 KiB (2 instances)
+  L3:                     4 MiB (1 instance)
+NUMA:                     
+  NUMA node(s):           1
+  NUMA node0 CPU(s):      0-3
+Vulnerabilities:          
+  Gather data sampling:   Mitigation; Microcode
+  Itlb multihit:          KVM: Mitigation: VMX disabled
+  L1tf:                   Not affected
+  Mds:                    Not affected
+  Meltdown:               Not affected
+  Mmio stale data:        Mitigation; Clear CPU buffers; SMT vulnerable
+  Reg file data sampling: Not affected
+  Retbleed:               Mitigation; Enhanced IBRS
+  Spec rstack overflow:   Not affected
+  Spec store bypass:      Mitigation; Speculative Store Bypass disabled via prct
+                          l
+  Spectre v1:             Mitigation; usercopy/swapgs barriers and __user pointe
+                          r sanitization
+  Spectre v2:             Mitigation; Enhanced / Automatic IBRS; IBPB conditiona
+                          l; RSB filling; PBRSB-eIBRS SW sequence; BHI SW loop, 
+                          KVM SW loop
+  Srbds:                  Mitigation; Microcode
+  Tsx async abort:        Not affected
+
+spookich@spookich-1337: ~/os  uname
+Linux
+
+root@spookich-1337: /home/spookich/os date && touch output && touch output1
+01 2025 00:06:12 MSK
+
+root@spookich-1337: /home/spookich/os cat output
+root@spookich-1337: /home/spookich/os cat output1
+
+root@spookich-1337: /home/spookich/os ls -lR 2>/dev/null / | grep -E '^-' | awk '{print $0; exit}
+-rw-------   1 root root 2147483648 27 02:31 swapfile
+root@spookich-1337: /home/spookich/os ls -lR 2>/dev/null / | grep -E '^-' | awk '{print $0; exit}' >> output
+root@spookich-1337: /home/spookich/os find 2>/dev/null / -name debug | awk '{print $0; exit}' >> output
+
+root@spookich-1337: /home/spookich/os ls -lR 2>/dev/null / | grep -E '^b' | awk '{print $0; exit}'
+brw-rw----  1 root     disk      7,   0 28 20:56 loop0
+root@spookich-1337: /home/spookich/os ls -lR 2>/dev/null / | grep -E '^b' | awk '{print $0; exit}' >> output
+root@spookich-1337: /home/spookich/os find 2>/dev/null / -name loop0 | awk '{print $0; exit}' >> output
+
+root@spookich-1337: /home/spookich/os ls -lR 2>/dev/null / | grep -E '^c' | awk '{print $0; exit}'
+crw-------  1 root     root     10, 120 28 20:56 acpi_thermal_rel
+root@spookich-1337: /home/spookich/os ls -lR 2>/dev/null / | grep -E '^c' | awk '{print $0; exit}' >> output
+root@spookich-1337: /home/spookich/os find 2>/dev/null / -name acpi_thermal_rel | awk '{print $0; exit}' >> output
+
+root@spookich-1337: /home/spookich/os ls -lR 2>/dev/null / | grep -E '^d' | awk '{print $0; exit}'
+drwxr-xr-x   4 root root       4096 27 03:05 boot
+root@spookich-1337: /home/spookich/os ls -lR 2>/dev/null / | grep -E '^d' | awk '{print $0; exit}' >> output
+root@spookich-1337: /home/spookich/os find 2>/dev/null / -name bin.usr-is-merged | awk '{print $0; exit}' >> output
+
+root@spookich-1337: /home/spookich/os ls -lR 2>/dev/null / | grep -E '^l' | awk '{print $0; exit}'
+lrwxrwxrwx   1 root root          7 27 02:31 bin -> usr/bin
+root@spookich-1337: /home/spookich/os ls -lR 2>/dev/null / | grep -E '^l' | awk '{print $0; exit}' >> output
+root@spookich-1337: /home/spookich/os find 2>/dev/null / -name bin | awk '{print $0; exit}' >> output
+
+root@spookich-1337: /home/spookich/os ls -lR 2>/dev/null / | grep -E '^p' | awk '{print $0; exit}'
+prw-------  1 root              root     0 28 20:56 initctl
+root@spookich-1337: /home/spookich/os ls -lR 2>/dev/null / | grep -E '^p' | awk '{print $0; exit}' >> output
+root@spookich-1337: /home/spookich/os find 2>/dev/null / -name initctl | awk '{print $0; exit}' >> output
+
+root@spookich-1337: /home/spookich/os ls -lR 2>/dev/null / | grep -E '^s' | awk '{print $0; exit}'
+srw-rw-rw-  1 root              root     0 28 20:56 acpid.socket
+root@spookich-1337: /home/spookich/os ls -lR 2>/dev/null / | grep -E '^s' | awk '{print $0; exit}' >> output
+root@spookich-1337: /home/spookich/os find 2>/dev/null / -name acpid.socket | awk '{print $0; exit}' >> output
+
+root@spookich-1337: /home/spookich/os date && cat output
+01 2025 00:18:48 MSK
+-rw-------   1 root root 2147483648  27 02:31 swapfile
+/sys/kernel/debug
+brw-rw----  1 root     disk      7,   0 28 20:56 loop0
+/sys/kernel/debug/block/loop0
+crw-------  1 root     root     10, 120  28 20:56 acpi_thermal_rel
+/sys/kernel/btf/acpi_thermal_rel
+drwxr-xr-x   4 root root       4096  27 03:05 boot
+lrwxrwxrwx   1 root root          7  27 02:31 bin -> usr/bin
+/sys/kernel/tracing/options/bin
+prw-------  1 root              root     0  28 20:56 initctl
+/run/initctl
+srw-rw-rw-  1 root              root     0  28 20:56 acpid.socket
+/var/lib/systemd/deb-systemd-helper-enabled/sockets.target.wants/acpid.socket
+
+root@spookich-1337: /home/spookich/os date && ./scan_fs.sh output1
+01  2025 00:22:04 MSK
+
+root@spookich-1337: /home/spookich/oscat output1
+-rw-------   1 root root 2147483648  27 02:31 swapfile
+/sys/kernel/debug
+
+brw-rw----  1 root     disk      7,   0  28 20:56 loop0
+/sys/kernel/debug/block/loop0
+
+crw-------  1 root     root     10, 120  28 20:56 acpi_thermal_rel
+/sys/kernel/btf/acpi_thermal_rel
+
+drwxr-xr-x   4 root root       4096  27 03:05 boot
+
+lrwxrwxrwx   1 root root          7  27 02:31 bin -> usr/bin
+/sys/kernel/tracing/options/bin
+
+prw-------  1 root              root     0  28 20:56 initctl
+/run/initctl
+
+srw-rw-rw-  1 root              root     0  28 20:56 acpid.socket
+/var/lib/systemd/deb-systemd-helper-enabled/sockets.target.wants/acpid.socket
+
+root@spookich-1337: /home/spookich/os date && touch source
+ 01  2025 01:40:28 MSK
+root@spookich-1337: /home/spookich/os date && ln source link1
+ 01  2025 01:40:37 MSK
+root@spookich-1337: /home/spookich/os cd ..
+root@spookich-1337: /home/spookich date && ln lab1/source link2
+ 01  2025 01:41:09 MSK
+root@spookich-1337: /home/spookich cd os
+
+root@spookich-1337: /home/spookich/os date && ls -i
+ 01  2025 01:41:33 MSK
+2626352 find_hardlinks.sh
+2626725 link1  
+2626023 main.log  
+2626725 source  
+2626718 test.log
+
+root@spookich-1337: /home/spookich/os date && ./find_hardlinks.sh source
+ 01  2025 01:42:23 MSK
+'source' (inode: 2626725)...
+/home/spookich/link2
+/home/spookich/os/link1
+/home/spookich/os/source
+
+root@spookich-1337: /home/spookich/os date && touch source_file
+ 01  2025 01:54:08 MSK
+
+root@spookich-1337: /home/spookich/os ln -s source_file link1
+root@spookich-1337: /home/spookich/os ls -l link1
+lrwxrwxrwx 1 root root 11   1 01:54 link1 -> source_file
+
+root@spookich-1337: /home/spookich/os cp -s source_file link2
+root@spookich-1337: /home/spookich/os -l link2
+lrwxrwxrwx 1 root root 11   1 01:54 link2 -> source_file
+
+root@spookich-1337: /home/spookich/os date && ./find_links.sh source_file
+ 01  2025 01:55:26 MSK
+lrwxrwxrwx 1 root     root        11   1 01:54 link1 -> source_file
+lrwxrwxrwx 1 root     root        11   1 01:54 link2 -> source_file
+
+root@spookich-1337: /home/spookich/os date && ./different_ways_to_find_links.sh source_file
+ 01  2025 02:24:10 MSK
+/home/spookich/os/link1 -> /home/spookich/os/source_file
+/home/spookich/os/link2 -> /home/spookich/os/source_file
+
+root@spookich-1337: date && find . -type p
+ 03  2025 01:57:26 MSK
+./run/systemd/inaccessible/fifo
+./run/systemd/sessions/2.ref
+./run/systemd/inhibit/1.ref
+./run/systemd/inhibit/2.ref
+./run/systemd/inhibit/3.ref
+./run/systemd/inhibit/4.ref
+./run/systemd/inhibit/11.ref
+./run/systemd/inhibit/12.ref
+./run/systemd/inhibit/13.ref
+./run/systemd/inhibit/14.ref
+./run/initctl
+./run/user/1000/systemd/inaccessible/fifo
+
+root@spookich-1337: / date && find . -type f -size +200M
+ 03  2025 01:57:48 MSK
+./sys/devices/pci0000:00/0000:00:02.0/resource2_wc
+./sys/devices/pci0000:00/0000:00:02.0/resource2
+./var/lib/snapd/cache/0dc359dd17f4611972d8efa49d9b5aaa013118796c834893ae96eacb618f25e92886710cdba66708f223a207a278c5ec
+./var/lib/snapd/cache/6547a099dd1b3e89bc2f188ea497c675a042357c15daf02996af0f2528d6123c5753292aa0c77c050112032cb7ebd66c
+./var/lib/snapd/seed/snaps/gnome-3-38-2004_119.snap
+./var/lib/snapd/snaps/firefox_5783.snap
+./var/lib/snapd/snaps/gnome-42-2204_202.snap
+./var/lib/snapd/snaps/gnome-3-38-2004_143.snap
+./var/lib/snapd/snaps/gnome-3-38-2004_119.snap
+find: ‘./run/user/1000/doc’: Permission denied
+find: ‘./run/user/1000/gvfs’: Permission denied
+./proc/kcore
+find: ‘./proc/4032/task/4032/fdinfo/6’: No such file or directory
+find: ‘./proc/4032/fdinfo/5’: No such file or directory
+./swapfile
+
+root@spookich-1337: / date && find . -type p -printf "%p %s %t\n"
+ 03  2025 01:57:57 MSK
+./run/systemd/inaccessible/fifo 0 Mon Mar  3 01:46:25.8078825830 2025
+./run/systemd/sessions/2.ref 0 Mon Mar  3 01:47:00.0498934060 2025
+./run/systemd/inhibit/1.ref 0 Mon Mar  3 01:46:27.9408826250 2025
+./run/systemd/inhibit/2.ref 0 Mon Mar  3 01:46:27.9778826260 2025
+./run/systemd/inhibit/3.ref 0 Mon Mar  3 01:46:27.9978826270 2025
+./run/systemd/inhibit/4.ref 0 Mon Mar  3 01:46:28.1758826300 2025
+./run/systemd/inhibit/11.ref 0 Mon Mar  3 01:47:03.2492271170 2025
+./run/systemd/inhibit/12.ref 0 Mon Mar  3 01:47:03.4386292770 2025
+./run/systemd/inhibit/13.ref 0 Mon Mar  3 01:47:03.4415733520 2025
+./run/systemd/inhibit/14.ref 0 Mon Mar  3 01:47:03.8400048380 2025
+./run/initctl 0 Mon Mar  3 01:46:25.9368825860 2025
+
+root@spookich-1337: / date && find . -type f -user spookich1337 | head -n 5
+ 03  2025 01:58:20 MSK
+./sys/fs/fuse/connections/51/congestion_threshold
+./sys/fs/fuse/connections/51/max_background
+./sys/fs/fuse/connections/51/abort
+./sys/fs/fuse/connections/51/waiting
+./sys/fs/fuse/connections/67/congestion_threshold
+
+root@spookich-1337: /home/spookich/os date && ls -l
+ 01  2025 16:25:43 MSK
+total 3228
+-rw-rw-r-- 1 spookich spookich   13905   1 16:13 main.log
+-rw-r--r-- 1 root     root           0   1 16:25 test_2.log
+-rw-r--r-- 1 root     root     3287708   1 16:23 test.log
+
+root@spookich-1337: /home/spookich/os date && touch file1.txt && touch file2.txt
+ 01  2025 16:25:55 MSK
+root@spookich-1337: /home/spookich/os find . -name "*.txt" -exec tar -czvf archive.tar.gz {} +
+./file2.txt
+./file3.txt
+./file1.txt
+
+root@spookich-1337: /home/spookich/os date && find . -name "*.txt" -exec tar -czvf archive.tar.gz {} +
+ 01  2025 16:26:13 MSK
+./file2.txt
+./file3.txt
+./file1.txt
+
+root@spookich-1337: /home/spookich/os date && ls -l
+ 01  2025 16:26:28 MSK
+total 3232
+-rw-r--r-- 1 root     root         136   1 16:26 31marchive.tar.gz
+-rw-r--r-- 1 root     root           0   1 16:25 file1.txt
+-rw-r--r-- 1 root     root           0   1 16:25 file2.txt
+-rw-r--r-- 1 root     root           0   1 16:25 file3.txt
+-rw-rw-r-- 1 spookich spookich   13905   1 16:13 main.log
+-rw-r--r-- 1 root     root           0   1 16:25 test_2.log
+-rw-r--r-- 1 root     root     3287708   1 16:23 test.log
+
+root@spookich-1337: /home/spookich/os date && find . -name "file*" -exec chmod 644 {} \;
+ 01  2025 16:26:56 MSK
+
+root@spookich-1337: /home/spookich/os date && ls -l
+ 01  2025 16:27:07 MSK
+total 3232
+-rw-r--r-- 1 root     root         136   1 16:26 31marchive.tar.gz
+-rw-r--r-- 1 root     root           0   1 16:25 file1.txt
+-rw-r--r-- 1 root     root           0   1 16:25 file2.txt
+-rw-r--r-- 1 root     root           0   1 16:25 file3.txt
+-rw-rw-r-- 1 spookich spookich   13905   1 16:13 main.log
+-rw-r--r-- 1 root     root           0   1 16:25 test_2.log
+-rw-r--r-- 1 root     root     3287708   1 16:23 test.log
+
+root@spookich-1337: /home/spookich/os date && ./exp-odhex.sh
+ 19  2025 23:48:32 MSK
+Hello world!
+
+0000000   H   e   l   l   o       w   o   r   l   d   !  \n
+0000015
+
+00000000  48 65 6c 6c 6f 20 77 6f  72 6c 64 21 0a           |Hello world!.|
+0000000d
+
+0000000 211   P   N   G  \r  \n 032  \n  \0  \0  \0  \r   I   H   D   R
+0000020  \0  \0  \0 020  \0  \0  \0 020  \b 006  \0  \0  \0 220   m  \v
+0000040 373  \0  \0  \0 002   t   R   N   S  \0  \0  \0 001  \0  \0  \0
+0000060 001  \0  \0  \0  \0  \0  \0  \0  \0  \0  \0  \0  \0  \0  \0  \0
+0000100  \0  \0  \0  \0  \0  \0  \0  \0  \0  \0  \0  \0
+0000114
+
+00000000  89 50 4e 47 0d 0a 1a 0a  00 00 00 0d 49 48 44 52  |.PNG........IHDR|
+00000010  00 00 00 10 00 00 00 10  08 06 00 00 00 90 6d 0b  |..............m.|
+00000020  fb 00 00 00 02 74 52 4e  53 00 00 00 01 00 00 00  |.....tRNS.......|
+00000030  01 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+00000040  00 00 00 00 00 00 00 00  00 00 00 00              |............|
+0000004c
+
+total 8
+-rw-r--r-- 1 root root  0  19 23:48 emptyfile
+-rw-r--r-- 1 root root 14  19 23:48 file1.txt
+-rw-r--r-- 1 root root 15  19 23:48 file2.txt
+
+od: testdir: read error: Is a directory
+0000000
+
+hexdump: testdir: Is a directory
+
+0000000   T   h   i   s       i   s       f   i   l   e   1  \n   N   e
+0000020   w       i   n   f   o       t   o       f   i   l   e       1
+0000040  \n
+0000041
+00000000  54 68 69 73 20 69 73 20  66 69 6c 65 31 0a 4e 65  |This is file1.Ne|
+00000010  77 20 69 6e 66 6f 20 74  6f 20 66 69 6c 65 20 31  |w info to file 1|
+00000020  0a                                                |.|
+00000021
+
+0000000   T   h   i   s       i   s       f   i   l   e       3  \n
+0000017
+00000000  54 68 69 73 20 69 73 20  66 69 6c 65 20 33 0a     |This is file 3.|
+0000000f
+
+root@spookich-1337: /home/spookich/os date && ./exp-catalog.sh
+ 20  2025 00:01:24 MSK
+4,0K	dir
+total 0
+
+84K	dir
+total 80
+4 -rw-r--r-- 1 root root 15  20 00:01 file10.txt
+4 -rw-r--r-- 1 root root 15  20 00:01 file11.txt
+4 -rw-r--r-- 1 root root 15  20 00:01 file12.txt
+4 -rw-r--r-- 1 root root 15  20 00:01 file13.txt
+4 -rw-r--r-- 1 root root 15  20 00:01 file14.txt
+4 -rw-r--r-- 1 root root 15  20 00:01 file15.txt
+4 -rw-r--r-- 1 root root 15  20 00:01 file16.txt
+4 -rw-r--r-- 1 root root 15  20 00:01 file17.txt
+4 -rw-r--r-- 1 root root 15  20 00:01 file18.txt
+4 -rw-r--r-- 1 root root 15  20 00:01 file19.txt
+4 -rw-r--r-- 1 root root 14  20 00:01 file1.txt
+4 -rw-r--r-- 1 root root 15  20 00:01 file20.txt
+4 -rw-r--r-- 1 root root 14  20 00:01 file2.txt
+4 -rw-r--r-- 1 root root 14  20 00:01 file3.txt
+4 -rw-r--r-- 1 root root 14  20 00:01 file4.txt
+4 -rw-r--r-- 1 root root 14  20 00:01 file5.txt
+4 -rw-r--r-- 1 root root 14  20 00:01 file6.txt
+4 -rw-r--r-- 1 root root 14  20 00:01 file7.txt
+4 -rw-r--r-- 1 root root 14  20 00:01 file8.txt
+4 -rw-r--r-- 1 root root 14  20 00:01 file9.txt
+
+44K	dir
+total 40
+4 -rw-r--r-- 1 root root 15  20 00:01 file11.txt
+4 -rw-r--r-- 1 root root 15  20 00:01 file12.txt
+4 -rw-r--r-- 1 root root 15  20 00:01 file13.txt
+4 -rw-r--r-- 1 root root 15  20 00:01 file14.txt
+4 -rw-r--r-- 1 root root 15  20 00:01 file15.txt
+4 -rw-r--r-- 1 root root 15  20 00:01 file16.txt
+4 -rw-r--r-- 1 root root 15  20 00:01 file17.txt
+4 -rw-r--r-- 1 root root 15  20 00:01 file18.txt
+4 -rw-r--r-- 1 root root 15  20 00:01 file19.txt
+4 -rw-r--r-- 1 root root 15  20 00:01 file20.txt
+
+404K	dir
+total 400
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir1
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir10
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir11
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir12
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir13
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir14
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir15
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir16
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir17
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir18
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir19
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir2
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir20
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir21
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir22
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir23
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir24
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir25
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir26
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir27
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir28
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir29
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir3
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir30
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir31
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir32
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir33
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir34
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir35
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir36
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir37
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir38
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir39
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir4
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir40
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir41
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir42
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir43
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir44
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir45
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir46
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir47
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir48
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir49
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir5
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir50
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir6
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir7
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir8
+4 drwxr-xr-x 2 root root 4096  20 00:01 dir9
+4 -rw-r--r-- 1 root root   20  20 00:01 file10.txt
+4 -rw-r--r-- 1 root root   20  20 00:01 file11.txt
+4 -rw-r--r-- 1 root root   20  20 00:01 file12.txt
+4 -rw-r--r-- 1 root root   20  20 00:01 file13.txt
+4 -rw-r--r-- 1 root root   20  20 00:01 file14.txt
+4 -rw-r--r-- 1 root root   20  20 00:01 file15.txt
+4 -rw-r--r-- 1 root root   20  20 00:01 file16.txt
+4 -rw-r--r-- 1 root root   20  20 00:01 file17.txt
+4 -rw-r--r-- 1 root root   20  20 00:01 file18.txt
+4 -rw-r--r-- 1 root root   20  20 00:01 file19.txt
+4 -rw-r--r-- 1 root root   19  20 00:01 file1.txt
+4 -rw-r--r-- 1 root root   20  20 00:01 file20.txt
+4 -rw-r--r-- 1 root root   20  20 00:01 file21.txt
+4 -rw-r--r-- 1 root root   20  20 00:01 file22.txt
+4 -rw-r--r-- 1 root root   20  20 00:01 file23.txt
+4 -rw-r--r-- 1 root root   20  20 00:01 file24.txt
+4 -rw-r--r-- 1 root root   20  20 00:01 file25.txt
+4 -rw-r--r-- 1 root root   20  20 00:01 file26.txt
+4 -rw-r--r-- 1 root root   20  20 00:01 file27.txt
+4 -rw-r--r-- 1 root root   20  20 00:01 file28.txt
+4 -rw-r--r-- 1 root root   20  20 00:01 file29.txt
+4 -rw-r--r-- 1 root root   19  20 00:01 file2.txt
+4 -rw-r--r-- 1 root root   20  20 00:01 file30.txt
+4 -rw-r--r-- 1 root root   20  20 00:01 file31.txt
+4 -rw-r--r-- 1 root root   20  20 00:01 file32.txt
+4 -rw-r--r-- 1 root root   20  20 00:01 file33.txt
+4 -rw-r--r-- 1 root root   20  20 00:01 file34.txt
+4 -rw-r--r-- 1 root root   20  20 00:01 file35.txt
+4 -rw-r--r-- 1 root root   20  20 00:01 file36.txt
+4 -rw-r--r-- 1 root root   20  20 00:01 file37.txt
+4 -rw-r--r-- 1 root root   20  20 00:01 file38.txt
+4 -rw-r--r-- 1 root root   20  20 00:01 file39.txt
+4 -rw-r--r-- 1 root root   19  20 00:01 file3.txt
+4 -rw-r--r-- 1 root root   20  20 00:01 file40.txt
+4 -rw-r--r-- 1 root root   20  20 00:01 file41.txt
+4 -rw-r--r-- 1 root root   20  20 00:01 file42.txt
+4 -rw-r--r-- 1 root root   20  20 00:01 file43.txt
+4 -rw-r--r-- 1 root root   20  20 00:01 file44.txt
+4 -rw-r--r-- 1 root root   20  20 00:01 file45.txt
+4 -rw-r--r-- 1 root root   20  20 00:01 file46.txt
+4 -rw-r--r-- 1 root root   20  20 00:01 file47.txt
+4 -rw-r--r-- 1 root root   20  20 00:01 file48.txt
+4 -rw-r--r-- 1 root root   20  20 00:01 file49.txt
+4 -rw-r--r-- 1 root root   19  20 00:01 file4.txt
+4 -rw-r--r-- 1 root root   20  20 00:01 file50.txt
+4 -rw-r--r-- 1 root root   19  20 00:01 file5.txt
+4 -rw-r--r-- 1 root root   19  20 00:01 file6.txt
+4 -rw-r--r-- 1 root root   19  20 00:01 file7.txt
+4 -rw-r--r-- 1 root root   19  20 00:01 file8.txt
+4 -rw-r--r-- 1 root root   19  20 00:01 file9.txt
+
+4,0K	dir
+total 0
+
+root@spookich-1337: /home/spookich/osdate && ./passwd-content.sh
+ 20  2025 00:12:23 MSK
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+root:!:20145:0:99999:7:::
+daemon:*:19432:0:99999:7:::
+bin:*:19432:0:99999:7:::
+root L 02/26/2025 0 99999 7 -1
+-rwsr-xr-x 1 root root 59976   6  2024 /usr/bin/passwd
+-rw-r--r-- 1 root root 2971  27 02:59 /etc/passwd
+-rw-r----- 1 root shadow 1532  27 02:59 /etc/shadow
+
+root@spookich-1337: /home/spookich/os date && ./permissions.sh
+ 20  2025 00:20:45 MSK
+total 0
+-rw-r--r-- 1 root root 0  20 00:20 test_file
+total 0
+-rwxr-xr-- 1 root root 0  20 00:20 test_file
+total 0
+-rw-r--r-- 1 root root 0  20 00:20 test_file
+total 0
+-rw-r--r-- 1 root root 0  20 00:20 test_file
+total 0
+-rw-r--r-- 1 root shadow 0  20 00:20 test_file
+total 4
+-rwsr-xr-x 1 root shadow 41  20 00:20 test_file
+groupdel: group 'group3341' does not exist
+userdel: user 'danil' does not exist
+Adding user `danil' ...
+Adding new group `danil' (1001) ...
+Adding new user `danil' (1001) with group `danil' ...
+Creating home directory `/home/danil' ...
+Copying files from `/etc/skel' ...
+New password: 
+BAD PASSWORD: The password is shorter than 8 characters
+Retype new password: 
+passwd: password updated successfully
+Changing the user information for danil
+Enter the new value, or press ENTER for the default
+	Full Name []: 
+	Room Number []: 
+	Work Phone []: 
+	Home Phone []: 
+	Other []: 
+Is the information correct? [Y/n] y
+Adding group `group3341' (GID 1002) ...
+Done.
+danil : danil group3341
+-rwxrw---- 1 root root 0  20 00:21 9_3.txt
+-rwxrw---- 1 danil group3341 0  20 00:21 9_3.txt
+try
+try_danil, success
+
+root@spookich-1337: /home/spookich/os date && ./experiment-dir-permissions.sh
+ 20  2025 00:26:04 MSK
+Adding user `testuser' ...
+Adding new group `testuser' (1003) ...
+Adding new user `testuser' (1002) with group `testuser' ...
+The home directory `/home/testuser' already exists.  Not copying from `/etc/skel'.
+drwxr-xr-x 2 root root 4096  20 00:26 experiment
+-rwxr--r-- 1 root root 0  20 00:26 experiment/testfile.txt
+touch: cannot touch 'experiment/userfile.txt': Permission denied
+testfile.txt
+bash: line 12: experiment/testfile.txt: No such file or directory
+cat: experiment/testfile.txt: No such file or directory
+rootfile.txt  testfile.txt
+root_test
+drwx------ 2 root root 4096  20 00:26 experiment
+-rw------- 1 root root 10  20 00:26 experiment/testfile.txt
+touch: cannot touch 'experiment/userfile2.txt': Permission denied
+ls: cannot open directory 'experiment': Permission denied
+bash: line 9: cd: experiment: Permission denied
+bash: line 12: experiment/testfile.txt: Permission denied
+cat: experiment/testfile.txt: Permission denied
+rootfile2.txt  rootfile.txt  testfile.txt
+root_test
+root_test2
+
+root@spookich-1337: /home/spookich/os date && ./gateway.sh
+ 20  2025 00:46:54 MSK
+Adding group `tempgroup' (GID 1005) ...
+Done.
+Adding group `tempgroup2' (GID 1006) ...
+Done.
+./gateway.sh: line 25: g++: command not found
+chown: cannot access 'gateway_cpp': No such file or directory
+chmod: cannot access 'gateway_cpp': No such file or directory
+ls: cannot access 'gateway_cpp': No such file or directory
+-rw------- 1 testuser testuser 44  20 00:46 /home/testuser/private.txt
+sudo: ./gateway_cpp: command not found
+
+ls: cannot access 'gateway_cpp': No such file or directory
+sudo: ./gateway_cpp: command not found
+
+chmod: cannot access 'gateway_cpp': No such file or directory
+ls: cannot access 'gateway_cpp': No such file or directory
+
+root@spookich-1337: /home/spookich/os date && cat ./disk-analyze.sh
+ 20  2025 00:59:05 MSK
+#!/bin/bash
+11.1
+df -h
+
+cat /etc/fstab
+
+lsblk
+
+11.2
+findmnt > findmnt_before.txt
+
+read -p 
+
+findmnt > findmnt_after.txt
+
+diff findmnt_before.txt findmnt_after.txt
+
+findmnt --tree
+
+11.3
+longest_path=$(find / -type d -or -type f 2>/dev/null | awk '{ print length, $0 }' | sort -nr | head -n 1)
+longest_path_full=$(echo "$longest_path" | awk '{print $2}') 
+
+root@spookich-1337: /home/spookich/os date && ./disk-analyze.sh
+ 20  2025 00:59:14 MSK
+./disk-analyze.sh: line 2: 11.1: command not found
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs           769M  2,1M  767M   1% /run
+/dev/nvme0n1p5   59G   13G   43G  24% /
+tmpfs           3,8G     0  3,8G   0% /dev/shm
+tmpfs           5,0M  4,0K  5,0M   1% /run/lock
+efivarfs        184K   69K  111K  39% /sys/firmware/efi/efivars
+/dev/nvme0n1p1   96M   37M   60M  39% /boot/efi
+tmpfs           769M  132K  769M   1% /run/user/1000
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+# / was on /dev/nvme0n1p5 during installation
+UUID=2b3f1536-1e05-490d-bbb4-4f5475244da2 /               ext4    errors=remount-ro 0       1
+# /boot/efi was on /dev/nvme0n1p1 during installation
+UUID=789C-B6BB  /boot/efi       vfat    umask=0077      0       1
+/swapfile                                 none            swap    sw              0       0
+NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+loop0         7:0    0     4K  1 loop /snap/bare/5
+loop1         7:1    0  63,3M  1 loop /snap/core20/1828
+loop2         7:2    0  63,7M  1 loop /snap/core20/2496
+loop3         7:3    0  73,9M  1 loop /snap/core22/1748
+loop4         7:4    0 257,9M  1 loop /snap/firefox/5783
+loop5         7:5    0 346,3M  1 loop /snap/gnome-3-38-2004/119
+loop6         7:6    0 349,7M  1 loop /snap/gnome-3-38-2004/143
+loop7         7:7    0  91,7M  1 loop /snap/gtk-common-themes/1535
+loop8         7:8    0   516M  1 loop /snap/gnome-42-2204/202
+loop9         7:9    0  12,2M  1 loop /snap/snap-store/1216
+loop10        7:10   0  45,9M  1 loop /snap/snap-store/638
+loop11        7:11   0  49,8M  1 loop /snap/snapd/18357
+loop12        7:12   0  44,4M  1 loop /snap/snapd/23545
+loop13        7:13   0   568K  1 loop /snap/snapd-desktop-integration/253
+nvme0n1     259:0    0 238,5G  0 disk 
+├─nvme0n1p1 259:1    0   100M  0 part /boot/efi
+├─nvme0n1p2 259:2    0    16M  0 part 
+├─nvme0n1p3 259:3    0 177,6G  0 part 
+├─nvme0n1p4 259:4    0   778M  0 part 
+└─nvme0n1p5 259:5    0    60G  0 part /
+./disk-analyze.sh: line 12: 11.2: command not found
+TARGET                                            SOURCE                 FSTYPE          OPTIONS
+/                                                 /dev/nvme0n1p5         ext4            rw,relatime,errors=remount-ro
+├─/sys                                            sysfs                  sysfs           rw,nosuid,nodev,noexec,relatime
+│ ├─/sys/kernel/security                          securityfs             securityfs      rw,nosuid,nodev,noexec,relatime
+│ ├─/sys/fs/cgroup                                cgroup2                cgroup2         rw,nosuid,nodev,noexec,relatime,nsdelegate,memory_recursiveprot
+│ ├─/sys/fs/pstore                                pstore                 pstore          rw,nosuid,nodev,noexec,relatime
+│ ├─/sys/firmware/efi/efivars                     efivarfs               efivarfs        rw,nosuid,nodev,noexec,relatime
+│ ├─/sys/fs/bpf                                   bpf                    bpf             rw,nosuid,nodev,noexec,relatime,mode=700
+│ ├─/sys/kernel/debug                             debugfs                debugfs         rw,nosuid,nodev,noexec,relatime
+│ ├─/sys/kernel/tracing                           tracefs                tracefs         rw,nosuid,nodev,noexec,relatime
+│ ├─/sys/fs/fuse/connections                      fusectl                fusectl         rw,nosuid,nodev,noexec,relatime
+│ └─/sys/kernel/config                            configfs               configfs        rw,nosuid,nodev,noexec,relatime
+├─/proc                                           proc                   proc            rw,nosuid,nodev,noexec,relatime
+│ └─/proc/sys/fs/binfmt_misc                      systemd-1              autofs          rw,relatime,fd=29,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=6070
+│   └─/proc/sys/fs/binfmt_misc                    binfmt_misc            binfmt_misc     rw,nosuid,nodev,noexec,relatime
+├─/dev                                            udev                   devtmpfs        rw,nosuid,relatime,size=3894468k,nr_inodes=973617,mode=755,inode64
+│ ├─/dev/pts                                      devpts                 devpts          rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000
+│ ├─/dev/shm                                      tmpfs                  tmpfs           rw,nosuid,nodev,inode64
+│ ├─/dev/mqueue                                   mqueue                 mqueue          rw,nosuid,nodev,noexec,relatime
+│ └─/dev/hugepages                                hugetlbfs              hugetlbfs       rw,relatime,pagesize=2M
+├─/run                                            tmpfs                  tmpfs           rw,nosuid,nodev,noexec,relatime,size=786824k,mode=755,inode64
+│ ├─/run/lock                                     tmpfs                  tmpfs           rw,nosuid,nodev,noexec,relatime,size=5120k,inode64
+│ ├─/run/credentials/systemd-sysusers.service     ramfs                  ramfs           ro,nosuid,nodev,noexec,relatime,mode=700
+│ ├─/run/snapd/ns                                 tmpfs[/snapd/ns]       tmpfs           rw,nosuid,nodev,noexec,relatime,size=786824k,mode=755,inode64
+│ │ ├─/run/snapd/ns/snapd-desktop-integration.mnt nsfs[mnt:[4026532659]] nsfs            rw
+│ │ ├─/run/snapd/ns/firefox.mnt                   nsfs[mnt:[4026532425]] nsfs            rw
+│ │ └─/run/snapd/ns/snap-store.mnt                nsfs[mnt:[4026532723]] nsfs            rw
+│ └─/run/user/1000                                tmpfs                  tmpfs           rw,nosuid,nodev,relatime,size=786820k,nr_inodes=196705,mode=700,uid=1000,gid=1000,inode64
+│   ├─/run/user/1000/doc                          portal                 fuse.portal     rw,nosuid,nodev,relatime,user_id=1000,group_id=1000
+│   └─/run/user/1000/gvfs                         gvfsd-fuse             fuse.gvfsd-fuse rw,nosuid,nodev,relatime,user_id=1000,group_id=1000
+├─/snap/bare/5                                    /dev/loop0             squashfs        ro,nodev,relatime,errors=continue,threads=single
+├─/snap/core20/1828                               /dev/loop1             squashfs        ro,nodev,relatime,errors=continue,threads=single
+├─/snap/core20/2496                               /dev/loop2             squashfs        ro,nodev,relatime,errors=continue,threads=single
+├─/snap/core22/1748                               /dev/loop3             squashfs        ro,nodev,relatime,errors=continue,threads=single
+├─/snap/gnome-3-38-2004/119                       /dev/loop5             squashfs        ro,nodev,relatime,errors=continue,threads=single
+├─/snap/firefox/5783                              /dev/loop4             squashfs        ro,nodev,relatime,errors=continue,threads=single
+├─/snap/gnome-3-38-2004/143                       /dev/loop6             squashfs        ro,nodev,relatime,errors=continue,threads=single
+├─/snap/gtk-common-themes/1535                    /dev/loop7             squashfs        ro,nodev,relatime,errors=continue,threads=single
+├─/snap/gnome-42-2204/202                         /dev/loop8             squashfs        ro,nodev,relatime,errors=continue,threads=single
+├─/snap/snap-store/1216                           /dev/loop9             squashfs        ro,nodev,relatime,errors=continue,threads=single
+├─/snap/snapd/18357                               /dev/loop11            squashfs        ro,nodev,relatime,errors=continue,threads=single
+├─/snap/snap-store/638                            /dev/loop10            squashfs        ro,nodev,relatime,errors=continue,threads=single
+├─/snap/snapd/23545                               /dev/loop12            squashfs        ro,nodev,relatime,errors=continue,threads=single
+├─/snap/snapd-desktop-integration/253             /dev/loop13            squashfs        ro,nodev,relatime,errors=continue,threads=single
+└─/boot/efi                                       /dev/nvme0n1p1         vfat            rw,relatime,fmask=0077,dmask=0077,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro
+./disk-analyze.sh: line 27: 11.3: command not found
+
+222 /home/spookich/snap/firefox/common/.mozilla/firefox/14cxkkr6.default-release/storage/default/https+++www.googletagmanager.com^partitionKey=%28https%2Chabr.com%29/cache/morgue/19/{a344515c-492b-4016-ba83-3e04dab69313}.final
+
+root@spookich-1337: /home/spookich/os date && ./file-util.sh
+ 20  2025 01:07:42 MSK
+./file-util.sh: line 2: 12.1: command not found
+00000000  89 50 4e 47 0d 0a 1a 0a  00 00 00 0d 49 48 44 52  |.PNG........IHDR|
+00000010  00 00 00 30 00 00 00 30  08 06 00 00 00 57 02 f9  |...0...0.....W..|
+00000020  87 00 00 00 04 73 42 49  54 08 08 08 08 7c 08 64  |.....sBIT....|.d|
+./file-util.sh: line 10: g++: command not found
+hexdump: ./a.out: No such file or directory
+hexdump: all input file arguments failed
+./file-util.sh: line 15: 12.2: command not found
+/var/lib/swcatalog/icons/ubuntu-jammy-backports-universe/48x48/cockpit_cockpit.png: PNG image data, 48 x 48, 8-bit/color RGBA, non-interlaced
+/var/lib/swcatalog/icons/ubuntu-jammy-backports-universe/48x48/cockpit_cockpit.png: image/png
+/var/lib/swcatalog/icons/ubuntu-jammy-backports-universe/48x48/cockpit_cockpit.png: binary
+file-util.sh: Bourne-Again shell script, Unicode text, UTF-8 text executable
+main.cpp:     C source, ASCII text
+main.log:     Unicode text, UTF-8 text, with very long lines (329), with escape sequences, with overstriking
+test.log:     empty
+./file-util.sh: line 25: 12.3: command not found
+-rw-r--r-- 1 root     root        33  20 01:07 custom.magic
+-rw-r--r-- 1 root     root        20  20 01:07 custom.qwe
+custom.qwe: Custom file (QWER)
