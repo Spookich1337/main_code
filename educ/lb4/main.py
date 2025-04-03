@@ -117,5 +117,5 @@ def plot_iterations(left, right, x0, eps_values):
     plt.show()
 
 epsilons = [1e-1, 1e-2, 1e-3, 1e-4, 1e-5, 1e-6]
-plot_iterations(0, 1, 1, epsilons)
+plot_iterations(0, 0.7, 1, epsilons)
 explore_error(0, 1, epsilons)
