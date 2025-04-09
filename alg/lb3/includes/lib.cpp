@@ -29,36 +29,36 @@ std::string get_moves(const std::vector<std::vector<Cell>>& matrix, int n, int m
     return sequence;
 }
 
-std::set<std::string> get_all_moves(const std::vector<std::vector<Cell>>& matrix, int i, int j) {
+std::set<std::string> get_all_moves(const std::vector<std::vector<Cell>>& matrix, int n, int m){
     std::set<std::string> result;
     
-    if (i == 0 && j == 0) {
+    if (n == 0 && m == 0) {
         result.insert("");
         return result;
     }
     
     std::vector<std::pair<int, int>> moves;
-    int min_cost = matrix[i][j].cost;
+    int min_cost = matrix[n][m].cost;
     
     // Проверяем все возможные ходы
-    if (i > 0 && j > 0 && matrix[i-1][j-1].cost + (matrix[i][j].move == 'R' ? 1 : 0) == min_cost) {
-        moves.emplace_back(i-1, j-1);
+    if (n > 0 && m > 0 && matrix[n-1][m-1].cost + (matrix[n][m].move == 'R' ? 1 : 0) == min_cost) {
+        moves.emplace_back(n-1, m-1);
     }
-    if (j > 0 && matrix[i][j-1].cost + 1 == min_cost) {
-        moves.emplace_back(i, j-1);
+    if (m > 0 && matrix[n][m-1].cost + 1 == min_cost) {
+        moves.emplace_back(n, m-1);
     }
-    if (i > 0 && matrix[i-1][j].cost + 1 == min_cost) {
-        moves.emplace_back(i-1, j);
+    if (n > 0 && matrix[n-1][m].cost + 1 == min_cost) {
+        moves.emplace_back(n-1, m);
     }
     
     // Рекурсивно собираем все последовательности
     for (const auto& move_pair : moves) {
         char move = ' ';
-        if (move_pair.first == i-1 && move_pair.second == j-1) {
-            move = (matrix[i][j].move == 'M' ? 'M' : 'R');
-        } else if (move_pair.first == i && move_pair.second == j-1) {
+        if (move_pair.first == n-1 && move_pair.second == m-1) {
+            move = (matrix[n][m].move == 'M' ? 'M' : 'R');
+        } else if (move_pair.first == n && move_pair.second == m-1) {
             move = 'I';
-        } else if (move_pair.first == i-1 && move_pair.second == j) {
+        } else if (move_pair.first == n-1 && move_pair.second == m) {
             move = 'D';
         }
         
@@ -80,7 +80,7 @@ void printMatrix(const std::vector<std::vector<Cell>>& matrix){
     }
 }
 
-void demonstrate_transformation(const std::string& str1, const std::string& str2, const std::string& sequence) {
+void demonstrate_transformation(const std::string& str1, const std::string& str2, const std::string& sequence){
     std::string current = str1;
     int pos1 = 0, pos2 = 0;
     

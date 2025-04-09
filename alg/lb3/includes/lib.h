@@ -16,7 +16,7 @@ class Cell{
 };
 
 
-std::set<std::string> get_all_moves(const std::vector<std::vector<Cell>>& matrix, int i, int j);
+std::set<std::string> get_all_moves(const std::vector<std::vector<Cell>>& matrix, int n, int m);
 
 std::string get_moves(const std::vector<std::vector<Cell>>& matrix, int n, int m);
 
