@@ -128,7 +128,7 @@ def exploration(n, interval):
 
 def main():
     while True:
-        print("What do you want to do? (explore/solve/exit)")
+        print("What do you want to do? (solve/exit)")
         user_input = input().strip().lower()
 
         if user_input == "exit":
@@ -176,8 +176,6 @@ def main():
                 print(f"{'Scipy solution norm:':<25}{solution['scipy_solution_norm']:.6e}")
                 print(f"{'Difference norm:':<25}{solution['diff_solution_norm']:.6e}")
                 print(f"{'Residual norm:':<25}{solution['residual_norm']:.6e}")
-                print(f"{'Custom condition number:':<25}{solution['condition_number_custom']:.6e}")
-                print(f"{'Scipy condition number:':<25}{solution['condition_number_scipy']:.6e}")
 
         except ValueError as e:
             print(f"Error: {e}")
