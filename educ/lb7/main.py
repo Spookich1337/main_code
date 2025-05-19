@@ -61,6 +61,8 @@ def gauss(matrix, n):
     straight_elimination(n, matrix)
     my_solution = inverse_step(n, matrix)
     solution_scipy = scipy.linalg.solve(A, b)
+
+    print("Norm of diff:", np.linalg.norm(np.array(my_solution) - np.array(solution_scipy)))
     
     # Вычисление норм решений
     my_solution_norm = np.linalg.norm(my_solution, ord=2)
